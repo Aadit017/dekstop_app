@@ -3,8 +3,8 @@ import urllib.request
 import json
 
 class MyApp:
-    API_URL = "https://bb33-2402-8100-2261-2d83-438-77a7-4ec-9adc.ngrok-free.app/get-all"
-    DELETE_API_URL = "https://bb33-2402-8100-2261-2d83-438-77a7-4ec-9adc.ngrok-free.app/remove"
+    API_URL = "https://8335-103-66-206-3.ngrok-free.app/get-all"
+    DELETE_API_URL = "https://8335-103-66-206-3.ngrok-free.app/remove"
 
     def __init__(self, master):
         # Create three frames as columns
@@ -45,7 +45,7 @@ class MyApp:
         data_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
         misc_frame.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
-                # configure grid layout to expand columns evenly
+        # configure grid layout to expand columns evenly
         master.columnconfigure(0, weight=10)
         master.columnconfigure(1, weight=1)
         master.columnconfigure(2, weight=1)
@@ -92,7 +92,7 @@ class MyApp:
             }
             json_data = json.dumps(data).encode('utf-8')
             headers = {'Content-type': 'application/json'}
-            request = urllib.request.Request("https://bb33-2402-8100-2261-2d83-438-77a7-4ec-9adc.ngrok-free.app/add", data=json_data, headers=headers, method='POST')
+            request = urllib.request.Request("https://8335-103-66-206-3.ngrok-free.app/add", data=json_data, headers=headers, method='POST')
             response = urllib.request.urlopen(request)
             print(response.read().decode('utf-8'))
             self.fetch_data_from_api(None)
@@ -103,4 +103,3 @@ root = tk.Tk()
 app = MyApp(root)
 app.fetch_data_from_api(None)
 root.mainloop()
-
